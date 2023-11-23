@@ -10,7 +10,7 @@ NEWS_API_URL = 'https://newsapi.org/v2/top-headlines'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('newsletter.html')
 
 @app.route('/search', methods=['POST'])
 def search():
