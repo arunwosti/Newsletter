@@ -10,7 +10,7 @@ NEWS_API_URL = 'https://newsapi.org/v2/top-headlines'
 
 @app.route('/')
 def index():
-    return render_template('newsletter.html')
+    return render_template('/newsletter.html')
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -19,7 +19,7 @@ def search():
     response = requests.get(NEWS_API_URL, params=params)
     data = response.json()
     articles = data.get('articles', [])
-    return render_template('search_results.html', articles=articles)
+    return render_template('/search_result.html', articles=articles)
 
 if __name__ == '__main__':
     app.run(debug=True)
